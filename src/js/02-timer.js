@@ -6,7 +6,7 @@ Notify.init({
 });
 import '../css/timer.css';
 
-let selectedDate;
+let selectedDate = null;
 const options = {
   enableTime: true,
   time_24hr: true,
