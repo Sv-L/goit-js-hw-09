@@ -59,7 +59,7 @@ function addLeadingZero(value) {
 
 function timer() {
   inputCalendar.disabled = true;
-  timerId = setInterval(() => {
+  const timerId = setInterval(() => {
     if (selectedDate - Date.now() >= 0) {
       updateInputValue();
     } else {
