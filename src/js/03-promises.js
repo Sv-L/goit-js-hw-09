@@ -13,11 +13,9 @@ function onClickSubmitBtn(e) {
   const delayValue = Number(delayEl.value);
   const amount = Number(amountEl.value);
   const step = Number(stepEl.value);
+
   for (let i = 1; i <= amount; i++) {
-    console.log('i', i);
-    console.log('amount', amount);
     let delay = delayValue + step * (i - 1);
-    console.log('delay ', delay);
     createPromise(i, delay);
   }
 }
@@ -25,6 +23,7 @@ function onClickSubmitBtn(e) {
 function createPromise(position, delay) {
   const returtObj = { position: `${position}`, delay: `${delay}` };
   const shouldResolve = Math.random() > 0.3;
+
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (shouldResolve) {
