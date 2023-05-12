@@ -21,15 +21,15 @@ function onClickSubmitBtn(e) {
 }
 
 function createPromise(position, delay) {
-  const returtObj = { position: `${position}`, delay: `${delay}` };
+  const returnObj = { position: `${position}`, delay: `${delay}` };
   const shouldResolve = Math.random() > 0.3;
 
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (shouldResolve) {
-        resolve(returtObj);
+        resolve(returnObj);
       } else {
-        reject(returtObj);
+        reject(returnObj);
       }
     }, delay);
   })
