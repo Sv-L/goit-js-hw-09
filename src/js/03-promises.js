@@ -1,4 +1,7 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+Notify.init({
+  position: 'center-center',
+});
 
 const delayEl = document.querySelector('input[name ="delay"]');
 const stepEl = document.querySelector('input[name ="step"]');
