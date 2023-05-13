@@ -57,13 +57,11 @@ function addLeadingZero(value) {
 }
 
 function timer() {
-  document.getElementsByClassName('flatpickr-input')[1].disabled = true;
   const timerId = setInterval(() => {
     if (selectedDate - Date.now() >= 0) {
       updateInputValue();
     } else {
       clearInterval(timerId);
-      inputCalendar.disabled = false;
     }
   }, 1000);
 }
