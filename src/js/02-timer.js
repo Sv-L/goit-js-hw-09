@@ -43,9 +43,9 @@ function checkselectedDate(data) {
 }
 
 function onClickStartBtn() {
-  startBtnEl.disabled = true;
   updateInputValue();
   timer();
+  startBtnEl.disabled = true;
   startBtnEl.removeEventListener('click', onClickStartBtn);
 }
 
