@@ -41,6 +41,7 @@ function onClickStartBtn() {
   startBtnEl.disabled = true;
   updateInputValue();
   timer();
+  startBtnEl.removeEventListener('click', onClickStartBtn);
 }
 
 function updateInputValue() {
