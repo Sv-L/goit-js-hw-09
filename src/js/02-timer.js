@@ -25,7 +25,6 @@ const minutesEl = document.querySelector('[data-minutes]');
 const secondsEl = document.querySelector('[data-seconds]');
 
 flatpickr(inputDatetimePickerEl, options);
-const inputCalendar = document.getElementsByClassName('flatpickr-input')[1];
 
 startBtnEl.disabled = true;
 
@@ -58,7 +57,7 @@ function addLeadingZero(value) {
 }
 
 function timer() {
-  inputCalendar.disabled = true;
+  document.getElementsByClassName('flatpickr-input')[1].disabled = true;
   const timerId = setInterval(() => {
     if (selectedDate - Date.now() >= 0) {
       updateInputValue();
