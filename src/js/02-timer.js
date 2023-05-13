@@ -12,14 +12,13 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  onOpen() {},
-  onClose(selectedDates, dateStr, instance) {
-    selectedDate = selectedDates[0];
-    checkselectedDate(selectedDates[0]);
+  onClose(selectedDates) {
     if (timerId) {
       clearInterval(timerId);
-      clearInputValue();
     }
+    selectedDate = selectedDates[0];
+    checkselectedDate(selectedDates[0]);
+    updateInputValue();
   },
 };
 const inputDatetimePickerEl = document.querySelector('input#datetime-picker');
@@ -44,7 +43,7 @@ function checkselectedDate(data) {
 
 function onClickStartBtn() {
   startBtnEl.disabled = true;
-  updateInputValue();
+
   timer();
   startBtnEl.removeEventListener('click', onClickStartBtn);
 }
