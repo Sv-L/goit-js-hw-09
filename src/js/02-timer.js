@@ -5,16 +5,21 @@ Notify.init({
   position: 'center-top',
 });
 import '../css/timer.css';
-
+let timerId;
 let selectedDate = null;
 const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
+  onOpen() {},
   onClose(selectedDates, dateStr, instance) {
     selectedDate = selectedDates[0];
     checkselectedDate(selectedDates[0]);
+    if (timerId) {
+      clearInterval(timerId);
+      clearInputValue();
+    }
   },
 };
 const inputDatetimePickerEl = document.querySelector('input#datetime-picker');
@@ -52,13 +57,19 @@ function updateInputValue() {
   minutesEl.textContent = addLeadingZero(time.minutes);
   secondsEl.textContent = addLeadingZero(time.seconds);
 }
+function clearInputValue() {
+  daysEl.textContent = '00';
+  hoursEl.textContent = '00';
+  minutesEl.textContent = '00';
+  secondsEl.textContent = '00';
+}
 
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
 
 function timer() {
-  const timerId = setInterval(() => {
+  timerId = setInterval(() => {
     if (selectedDate - Date.now() >= 0) {
       updateInputValue();
     } else {
