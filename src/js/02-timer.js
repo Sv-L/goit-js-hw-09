@@ -5,6 +5,7 @@ Notify.init({
   position: 'center-top',
 });
 import '../css/timer.css';
+
 let timerId;
 let selectedDate = null;
 const options = {
