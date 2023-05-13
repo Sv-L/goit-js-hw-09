@@ -15,6 +15,7 @@ const options = {
   onClose(selectedDates) {
     if (timerId) {
       clearInterval(timerId);
+      clearInputValue();
     }
     selectedDate = selectedDates[0];
     checkselectedDate(selectedDates[0]);
@@ -54,6 +55,13 @@ function updateInputValue() {
   hoursEl.textContent = addLeadingZero(time.hours);
   minutesEl.textContent = addLeadingZero(time.minutes);
   secondsEl.textContent = addLeadingZero(time.seconds);
+}
+
+function clearInputValue() {
+  daysEl.textContent = '00';
+  hoursEl.textContent = '00';
+  minutesEl.textContent = '00';
+  secondsEl.textContent = '00';
 }
 
 function addLeadingZero(value) {
