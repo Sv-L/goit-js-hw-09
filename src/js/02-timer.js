@@ -18,7 +18,6 @@ const options = {
     }
     selectedDate = selectedDates[0];
     checkselectedDate(selectedDates[0]);
-    updateInputValue();
   },
 };
 const inputDatetimePickerEl = document.querySelector('input#datetime-picker');
@@ -43,7 +42,7 @@ function checkselectedDate(data) {
 
 function onClickStartBtn() {
   startBtnEl.disabled = true;
-
+  updateInputValue();
   timer();
   startBtnEl.removeEventListener('click', onClickStartBtn);
 }
