@@ -36,6 +36,7 @@ startBtnEl.disabled = true;
 function checkselectedDate(data) {
   if (data <= Date.now()) {
     Notify.failure('Please choose a date in the future');
+    startBtnEl.disabled = true;
   } else {
     startBtnEl.disabled = false;
     startBtnEl.addEventListener('click', onClickStartBtn);
