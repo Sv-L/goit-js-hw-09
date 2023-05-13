@@ -56,12 +56,6 @@ function updateInputValue() {
   minutesEl.textContent = addLeadingZero(time.minutes);
   secondsEl.textContent = addLeadingZero(time.seconds);
 }
-function clearInputValue() {
-  daysEl.textContent = '00';
-  hoursEl.textContent = '00';
-  minutesEl.textContent = '00';
-  secondsEl.textContent = '00';
-}
 
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
